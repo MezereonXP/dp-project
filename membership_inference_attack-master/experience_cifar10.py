@@ -36,6 +36,16 @@ def experience_cifar10(config, path,param):
     dataset_sizes_target = {"train": len(data_train_target), "val": len(data_test_target)}
     model_target = Net_cifar10().to(device)
     optimizer = optim.SGD(model_target.parameters(), lr=config.learning.learning_rate, momentum=config.learning.momentum)
+    # Add DP noise!
+    privacy_engine = PrivacyEngine(
+                model_target,
+                batch_size=config.learning.batch_size,
+                sample_size=len(train_loader_target.dataset),
+                alphas=[1 + x / 10.0 for x in range(1, 100)] + list(range(12, 64)),
+                noise_multiplier=1.0,  # sigma
+                max_grad_norm=1.0,  # Clip per-sample gradients to this norm
+            )
+    privacy_engine.attach(optimizer)
     exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=config.learning.decrease_lr_factor, gamma=config.learning.decrease_lr_every)
     model_target, best_acc_target, data_test_set, label_test_set, class_test_set = train_model(model_target, criterion, optimizer, exp_lr_scheduler,dataloaders_target,dataset_sizes_target,
                        num_epochs=config.learning.epochs)

@@ -199,6 +199,7 @@ def main(_):
   duration = time.time() - start_time;
   print("test accuracy %g"%accuracy.eval(feed_dict={x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0}));
   print(float(duration));
+  
   ###
 
 if __name__ == '__main__':
