@@ -4,7 +4,7 @@ import matplotlib
 matplotlib.use('AGG')
 from matplotlib import pyplot as plt 
 def main():
-    # path = '/opt/kxp/workspace/dp-project/membership_inference_attack-master/results/CIFAR10_overfitting_2020_08_24_22_52_42/res_accuracy_per_class.npy'
+    # path = '/opt/kxp/workspace/dp-project/membership_inference_attack-master/results/MNIST_overfitting_2020_08_24_23_47_21/res_accuracy_per_class.npy'
     # res_accuracy_per_class = np.load(path)
     # print(res_accuracy_per_class)
     # x= np.linspace(1, 10, 10)
@@ -14,9 +14,9 @@ def main():
     # plt.ylabel('accuracy')
     # plt.legend()
     # # plt.show()
-    # plt.savefig('cifar10-acc-class.png', dpi=300)
+    # plt.savefig('mnist-acc-class.png', dpi=300)
 
-    # path = '/opt/kxp/workspace/dp-project/membership_inference_attack-master/results/CIFAR10_overfitting_2020_08_24_22_52_42/res_recall_per_class.npy'
+    # path = '/opt/kxp/workspace/dp-project/membership_inference_attack-master/results/MNIST_overfitting_2020_08_24_23_47_21/res_recall_per_class.npy'
     # res_accuracy_per_class = np.load(path)
     # print(res_accuracy_per_class)
     # x= np.linspace(1, 10, 10)
@@ -26,9 +26,9 @@ def main():
     # plt.ylabel('recall')
     # plt.legend()
     # # plt.show()
-    # plt.savefig('cifar10-recall-class.png', dpi=300)
+    # plt.savefig('mnist-recall-class.png', dpi=300)
 
-    path = '/opt/kxp/workspace/dp-project/membership_inference_attack-master/results/CIFAR10_overfitting_2020_08_24_22_52_42/res_precision_per_class.npy'
+    path = '/opt/kxp/workspace/dp-project/membership_inference_attack-master/results/MNIST_overfitting_2020_08_24_23_47_21/res_precision_per_class.npy'
     res_accuracy_per_class = np.load(path)
     # print(res_accuracy_per_class)
     x= np.linspace(1, 10, 10)
@@ -38,7 +38,7 @@ def main():
     plt.ylabel('precision')
     plt.legend()
     # plt.show()
-    plt.savefig('cifar10-precision-class.png', dpi=300)
+    plt.savefig('mnist-precision-class.png', dpi=300)
 
 
 if __name__ == '__main__':
